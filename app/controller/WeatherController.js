@@ -6,9 +6,10 @@ class WeatherController {
         return this._inputCity.val()
     }
     adiciona(event){
-        event.preventDefault();
 
+        event.preventDefault();
         let request = new Api(this.getInput())
         request.getWeather();
+        request.getTemperature();
     }
 }

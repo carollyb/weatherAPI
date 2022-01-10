@@ -1,7 +1,8 @@
 class Api {
 
     constructor(city){
-        this._city = city
+        this._city = city;
+        this._temperature = [];
     }
 
     getCity(){
@@ -23,8 +24,16 @@ class Api {
               console.log(response.list[0].name);
               console.log(response.list[0].main.temp);
               console.log(response.list[0].weather[0].description);
+              //this._temperature.push(response.list[0].main.temp)
             }
         });
+        
+    }
+
+    getTemperature(){
+        let temperaturaKelvin = new WeatherHelper(this._temperature)
+        console.log(temperaturaKelvin.getTemperaturaC())
+        //return temperaturaKelvin
     }
 }
 
