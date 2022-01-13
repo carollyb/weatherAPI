@@ -3,7 +3,9 @@ class WeatherHelper{
         this._temperaturaKelvin = tempK
     }
 
-    getTemperaturaC(){
-        return this._temperaturaKelvin[0]-273.15
+    get temperaturaC(){
+        
+        return this._temperaturaKelvin - 273
+        
     }
 }

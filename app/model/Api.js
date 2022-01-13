@@ -2,7 +2,6 @@ class Api {
 
     constructor(city){
         this._city = city;
-        this._temperature = [];
     }
 
     getCity(){
@@ -20,23 +19,15 @@ class Api {
                 "x-rapidapi-key": "8e1919796cmshecfd43aedaa3cd5p1ee97ejsna4fd79737630"
             },
             success: function (response) {
-              console.log(response);
-              console.log(response.list[0].name);
-              console.log(response.list[0].main.temp);
-              console.log(response.list[0].weather[0].description);
-              //this._temperature.push(response.list[0].main.temp)
+                let list = new WeatherList(response.list[0].name,response.list[0].main.temp,response.list[0].weather[0].description);
+                
+                console.log(list);
             }
         });
-        
-    }
-
-    getTemperature(){
-        let temperaturaKelvin = new WeatherHelper(this._temperature)
-        console.log(temperaturaKelvin.getTemperaturaC())
-        //return temperaturaKelvin
     }
 }
 
+//https://stackoverflow.com/questions/5316697/jquery-return-data-after-ajax-call-success
 //deve fazer a conversão de kelvin para celsius
 //console.log(response.list[0].name);
 //console.log(response.list[0].main.temp);
