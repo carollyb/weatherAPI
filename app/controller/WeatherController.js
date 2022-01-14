@@ -8,18 +8,23 @@ class WeatherController {
     getInput(){
         return this._inputCity.val()
     }
-    adiciona(event){
+    async adiciona(event){
 
         event.preventDefault();
         let request = new Api(this.getInput())
-        //chama a função quando clica
-        request.getWeather()
-
-        let helper = new WeatherHelper(WeatherList.temperature) //tá respondendo mais rápido do que a API
-        console.log(helper)
-
-        //chama o método de preencher
-        this.weatherView.update(//deve passar o objeto da lista)
+        
+        let resposta = await request.getWeather()
+        
+        if (resposta.error){
+            console.log('Cidade não existe');
+        } else {
+            let helper = new WeatherHelper(resposta.temperature)
+            console.log(helper.temperaturaC)
+            console.log(resposta);
+        }
+        
+        
+        //this.weatherView.update(//deve passar o objeto da lista)
         
     }
 }
