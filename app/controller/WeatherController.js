@@ -18,7 +18,7 @@ class WeatherController {
         let resposta = await request.getWeather()
         
         if (resposta.error){
-            console.log('Cidade não existe');
+            this._weatherView.errorMessage()
         } else {
             console.log(resposta);
             this._weatherView.update(resposta)

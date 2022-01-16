@@ -1,6 +1,8 @@
 class WeatherHelper{
+
     constructor(tempK){
         this._temperaturaKelvin = tempK
+        
     }
 
     get temperaturaC(){
