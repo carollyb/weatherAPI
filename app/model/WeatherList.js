@@ -17,7 +17,4 @@ class WeatherList{
         return this._description
     }
 
-    /*add(temperature){
-        let conversao = new WeatherHelper(this.getTemperature())
-    }*/
 }

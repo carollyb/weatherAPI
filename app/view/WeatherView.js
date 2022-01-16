@@ -3,21 +3,13 @@ class WeatherView{
     constructor(elemento){
         this._elemento = elemento;
     }
-    
-    template(model){
-        return `<div class="weather-info"> ${model.map (n=> {
-            return `
-            <p class="city">${n._city}</p>
-            <p class ="temperature">${WeatherHelper.temperaturaC}ºC</p>
-            <p class="description">${n._description}</p>
-            `
-        }).join('')}
-            
-        </div><div class="mood"></div>`
-    }
 
     update(model){
-        this._elemento.innerHTML = this._template(model)
+        let helper = new WeatherHelper(model.temperature)
+        console.log(helper.temperaturaC)
+        return this._elemento.append(`<p class="city">${model._city}</p>
+        <p class ="temperature">${helper.temperaturaC}ºC</p>
+        <p class="description">${model._description}</p>`)
     }
 
 }

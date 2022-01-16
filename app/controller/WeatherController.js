@@ -2,12 +2,14 @@ class WeatherController {
     constructor(){
         this._inputCity = $('#inputCity');
         //cria uma nova instância da view pegando o elemento do dom
-        this._weatherView = new WeatherView($('.fillWeather'));
+        let fillWeather = $('.fillWeather')
+        this._weatherView = new WeatherView(fillWeather);
         
     }
     getInput(){
         return this._inputCity.val()
     }
+
     async adiciona(event){
 
         event.preventDefault();
@@ -18,13 +20,9 @@ class WeatherController {
         if (resposta.error){
             console.log('Cidade não existe');
         } else {
-            let helper = new WeatherHelper(resposta.temperature)
-            console.log(helper.temperaturaC)
+            
             console.log(resposta);
+            this._weatherView.update(resposta)
         }
-        
-        
-        //this.weatherView.update(//deve passar o objeto da lista)
-        
     }
 }
