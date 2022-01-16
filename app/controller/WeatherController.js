@@ -17,13 +17,7 @@ class WeatherController {
         
         let resposta = await request.getWeather()
         
-        if (resposta.error){
-            this._weatherView.errorMessage()
-        } else {
-            console.log(resposta);
-            this._weatherView.update(resposta)
-        }
-
+        resposta.error ? this._weatherView.errorMessage() : this._weatherView.update(resposta)
         
     }
 }
