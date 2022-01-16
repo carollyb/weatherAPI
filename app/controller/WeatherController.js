@@ -20,9 +20,10 @@ class WeatherController {
         if (resposta.error){
             console.log('Cidade não existe');
         } else {
-            
             console.log(resposta);
             this._weatherView.update(resposta)
         }
+
+        
     }
 }

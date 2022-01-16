@@ -5,7 +5,7 @@ class WeatherHelper{
 
     get temperaturaC(){
         
-        return Math.round(this._temperaturaKelvin - 273)
+        return Math.round(this._temperaturaKelvin - 273.15)
         
     }
 }

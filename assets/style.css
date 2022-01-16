@@ -1,3 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+main{
+    font-family: 'Poppins', sans-serif;
+}
+
+.doNotDisplay{
+    display: none;
+}
+
 .fillWeather{
+    background-color: rgb(174, 92, 250);
+    border-radius: 20px;
+    padding: 20px;
     font-size: 50px;
+}
+
+#inputCity{
+    border-color: rgb(174, 92, 250);
+    border-radius: 20px;
+    height: 40px;
+    padding: 5px;
+}
+
+#btnCity{
+    border-color: rgb(174, 92, 250);
+    border-radius: 20px;
+    height: 40px;
+    padding: 5px;
+    background-color: rgba(174, 92, 250, 0.294);
 }
