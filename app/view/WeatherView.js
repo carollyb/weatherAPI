@@ -13,14 +13,41 @@ class WeatherView{
         this._elemento.html(`<p class="city">${model._city}</p>
         <p class ="temperature">${helper.temperaturaC}ºC</p>
         <p class="description">${model._description}</p>`);
+
+        //manipulando classes para mudar aparência do site de acordo com o output da descrição
         if (model._description == 'clear sky'){
-            $('main').addClass('clearSky')
+            $('body').addClass(function(){
+                if ($('.snowSky')){
+                    $('body').removeClass('snowSky');
+                } 
+                if ($('.otherSky')){
+                    $('body').removeClass('otherSky');
+                }
+                return 'clearSky'
+            })
         } else if (model._description == 'snow'){
             
-            $('main').addClass('snowSky')
+            $('body').addClass(function(){
+                if ($('.clearSky')){
+                    $('body').removeClass('clearSky')
+                } 
+                if ($('.otherSky')){
+                    $('body').removeClass('otherSky')
+                }
+                return 'snowSky'
+            })
+        } else {
+            $('body').addClass(function(){
+                if ($('.clearSky')){
+                    $('body').removeClass('clearSky')
+                } 
+                if ($('.snowSky')){
+                    $('body').removeClass('snowSky')
+                }
+                return 'otherSky'
+            })
         };        
         //deve limpar campo do input
-        
         
     }
 

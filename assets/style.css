@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-main{
+body{
+    height: 1100px;
+}
+
+main, nav{
     font-family: 'Poppins', sans-serif;
+}
+
+.dropdown-menu{
+    background-color: transparent;
+    transition: 1s;
 }
 
 .doNotDisplay{
@@ -9,32 +18,50 @@ main{
 }
 
 .fillWeather{
-    background-color: rgba(174, 92, 250, 0.212);
+    background-color: rgba(194, 193, 193, 0.178);
     border-radius: 20px;
     padding: 20px;
     font-size: 50px;
+    backdrop-filter: blur(15px);
+    transition: 2s;
 }
 
 .clearSky{
-    margin-top: -30px;
-    background: linear-gradient(235deg,rgba(255, 166, 0, 0.404),rgba(255, 255, 255, 0.438));
+    background-image: url(./images/clear.png);
+    transition: 2s;
+    background-position:right;
 }
 
 .snowSky{
-    background: linear-gradient(235deg,rgba(54, 51, 252, 0.404),rgba(255, 255, 255, 0.438));
+    background-image: url(./images/snow2.png);
+    transition: 2s;
+    background-position: center;
+}
+
+.otherSky{
+    background-image: url(./images/other.png);
+    transition: 2s;
+    background-size: cover; 
 }
 
 #inputCity{
-    border-color: rgb(174, 92, 250);
+    background-color: transparent;
+    border-color: rgb(138, 138, 138);
+    border-style: solid;
     border-radius: 20px;
-    height: 40px;
+    height: 42px;
     padding: 5px;
 }
 
 #btnCity{
-    border-color: rgb(174, 92, 250);
+    border-color: rgb(138, 138, 138);
+    border-style: solid;
     border-radius: 20px;
-    height: 40px;
+    height: 42px;
     padding: 5px;
-    background-color: rgba(174, 92, 250, 0.294);
+    background-color: rgba(138, 138, 138, 0.726);
+}
+
+.temperature{
+    font-weight: bolder;
 }
