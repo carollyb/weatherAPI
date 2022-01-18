@@ -9,10 +9,19 @@ main{
 }
 
 .fillWeather{
-    background-color: rgb(174, 92, 250);
+    background-color: rgba(174, 92, 250, 0.212);
     border-radius: 20px;
     padding: 20px;
     font-size: 50px;
+}
+
+.clearSky{
+    margin-top: -30px;
+    background: linear-gradient(235deg,rgba(255, 166, 0, 0.404),rgba(255, 255, 255, 0.438));
+}
+
+.snowSky{
+    background: linear-gradient(235deg,rgba(54, 51, 252, 0.404),rgba(255, 255, 255, 0.438));
 }
 
 #inputCity{

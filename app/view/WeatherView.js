@@ -10,11 +10,18 @@ class WeatherView{
         console.log(helper.temperaturaC)
         //página carrega com a div invisível através do display none, salvo nesta classe. ao clicar, deve remover
         this._elemento.removeClass('doNotDisplay')
-        return this._elemento.html(`<p class="city">${model._city}</p>
+        this._elemento.html(`<p class="city">${model._city}</p>
         <p class ="temperature">${helper.temperaturaC}ºC</p>
-        <p class="description">${model._description}</p>`);        
+        <p class="description">${model._description}</p>`);
+        if (model._description == 'clear sky'){
+            $('main').addClass('clearSky')
+        } else if (model._description == 'snow'){
+            
+            $('main').addClass('snowSky')
+        };        
         //deve limpar campo do input
-
+        
+        
     }
 
     errorMessage(){
